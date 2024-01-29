@@ -6,6 +6,10 @@
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="True"
              Title="Todo">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings"
+        IconImageSource="settings.svg"/>
+    </ContentPage.ToolbarItems>
     <Grid RowDefinitions="*,Auto">
         <CollectionView 
                   VerticalOptions="Center"
@@ -14,14 +18,14 @@
                   SelectionChanged="CollectionView_SelectionChanged">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:TodoItem">
-                        <Grid ColumnDefinitions="*, Auto" Padding="20">
-                            <Label Text="{Binding Name}"
+                    <Grid ColumnDefinitions="*, Auto" Padding="20">
+                        <Label Text="{Binding Title}"
                                    VerticalTextAlignment="Center"/>
-                            <Label Text="✔️"
+                        <Label Text="✔️"
                                    Grid.Column="2"
                                    VerticalTextAlignment="Center"
                                    IsVisible="{Binding Done}"/>
-                        </Grid>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

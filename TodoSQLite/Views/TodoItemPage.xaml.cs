@@ -21,7 +21,7 @@ public partial class TodoItemPage : ContentPage
 
     async void OnSaveClicked(object sender, EventArgs e)
     {
-        if (string.IsNullOrWhiteSpace(Item.Name))
+        if (string.IsNullOrWhiteSpace(Item.Title))
         {
             await DisplayAlert("Name Required", "Please enter a name for the todo item.", "OK");
             return;
