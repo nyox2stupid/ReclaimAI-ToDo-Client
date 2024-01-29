@@ -1,3 +1,4 @@
+based on https://github.com/dotnet/maui-samples/tree/main/8.0/Data/TodoSQLite
 ---
 name: .NET MAUI - Local Database with SQLite
 description: This sample demonstrates how to store data in a local database using SQLite.
