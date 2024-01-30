@@ -8,11 +8,12 @@
              Title="Todo">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Settings"
-        IconImageSource="settings.svg"/>
+        IconImageSource="settings.svg"
+        Clicked="OnSettingsClicked"/>
     </ContentPage.ToolbarItems>
     <Grid RowDefinitions="*,Auto">
         <CollectionView 
-                  VerticalOptions="Center"
+                  VerticalOptions="Fill"
                   ItemsSource="{Binding Items}"
                   SelectionMode="Single"
                   SelectionChanged="CollectionView_SelectionChanged">
@@ -20,11 +21,9 @@
                 <DataTemplate x:DataType="models:TodoItem">
                     <Grid ColumnDefinitions="*, Auto" Padding="20">
                         <Label Text="{Binding Title}"
-                                   VerticalTextAlignment="Center"/>
-                        <Label Text="✔️"
-                                   Grid.Column="2"
-                                   VerticalTextAlignment="Center"
-                                   IsVisible="{Binding Done}"/>
+                               VerticalTextAlignment="Center"/>
+                        <CheckBox Grid.Column="1"
+                                  IsChecked="{Binding Done}"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

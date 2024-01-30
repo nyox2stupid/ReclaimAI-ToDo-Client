@@ -46,5 +46,10 @@ public partial class TodoListPage : ContentPage
             ["Item"] = item
         });
     }
+
+    private async void OnSettingsClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(SettingsPage), true);
+    }
 }
 
