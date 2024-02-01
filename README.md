@@ -27,6 +27,6 @@ For more information about the sample see [Local Databases with SQlite documenta
     - [x] ~~Braucht eine Varibale für den Token: String~~
     - [ ] Hier können vorbelegungen für die Task eingestellt werden wie z.b "eventCategory"
 - New Item Page
-    - [x] ~~Hier können alle felder des ToDo Items befüllt werden~~
+    - [ ] ~~Hier können alle felder des ToDo Items befüllt werden~~
 - Change Item Page
     - [x] ~~Öffnet das erstellte Item und man kann die Details bearbeiten~~
