@@ -6,7 +6,7 @@
              Title="Settings">
     <VerticalStackLayout>
         <Entry x:Name="entry"
-       Placeholder="Please enter token"
-       Completed="OnEntryCompleted" />
+        Placeholder="Please enter token" 
+        Completed="OnEntryCompleted"/>
     </VerticalStackLayout>
 </ContentPage>

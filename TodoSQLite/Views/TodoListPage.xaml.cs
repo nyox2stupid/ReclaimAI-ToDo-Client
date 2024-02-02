@@ -9,8 +9,8 @@ public partial class TodoListPage : ContentPage
     TodoItemDatabase database;
     public ObservableCollection<TodoItem> Items { get; set; } = new();
     public TodoListPage(TodoItemDatabase todoItemDatabase)
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
         database = todoItemDatabase;
         BindingContext = this;
     }
@@ -36,7 +36,12 @@ public partial class TodoListPage : ContentPage
         });
     }
 
-    private async void  CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private void OnBoxChanged(object sender, EventArgs e) {
+        //if (e..FirstOrDefault() is not TodoItem item)
+        //    return;
+    }
+
+    private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (e.CurrentSelection.FirstOrDefault() is not TodoItem item)
             return;

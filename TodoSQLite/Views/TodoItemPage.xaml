@@ -13,10 +13,14 @@
             <Entry Text="{Binding Title}" />
             <Label Text="Notes" />
             <Entry Text="{Binding Notes}" />
-            <Label Text="Done" />
-            <Switch IsToggled="{Binding Done}" />
+            <Grid ColumnDefinitions="*, Auto" Padding="3">
+                <Label Text="Done" 
+                       VerticalOptions="Center"/>
+                <Switch Grid.Column="1" 
+                        IsToggled="{Binding Done}" />
+            </Grid>
             <Picker x:Name="picker"
-            Title="Select a monkey"
+            Title="Select an EventCategory"
             SelectedItem="{Binding EventCategory}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -25,6 +29,7 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
+            <Entry Text="{Binding Priority}" Placeholder="Enter priority here"/>
             <Button Text="Save"
                     Clicked="OnSaveClicked" />
             <Button Text="Delete"

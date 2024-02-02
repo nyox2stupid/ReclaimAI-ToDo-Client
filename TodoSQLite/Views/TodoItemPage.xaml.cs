@@ -6,12 +6,12 @@ namespace TodoSQLite.Views;
 [QueryProperty("Item", "Item")]
 public partial class TodoItemPage : ContentPage
 {
-	TodoItem item;
-	public TodoItem Item
-	{
-		get => BindingContext as TodoItem;
-		set => BindingContext = value;
-	}
+    TodoItem item;
+    public TodoItem Item
+    {
+        get => BindingContext as TodoItem;
+        set => BindingContext = value;
+    }
     TodoItemDatabase database;
     public TodoItemPage(TodoItemDatabase todoItemDatabase)
     {

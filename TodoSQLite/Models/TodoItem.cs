@@ -13,5 +13,4 @@ public class TodoItem
     public string EventCategory { get; set; }
     public bool Deleted { get; set; }
     public string Priority { get; set; }
-    public string Token { get; set; }
 }
