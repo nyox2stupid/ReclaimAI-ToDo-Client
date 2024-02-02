@@ -7,6 +7,12 @@ namespace TodoSQLite.Views;
 public partial class TodoListPage : ContentPage
 {
     TodoItemDatabase database;
+
+    public TodoItem Item
+    {
+        get => BindingContext as TodoItem;
+        set => BindingContext = value;
+    }
     public ObservableCollection<TodoItem> Items { get; set; } = new();
     public TodoListPage(TodoItemDatabase todoItemDatabase)
     {
@@ -36,7 +42,9 @@ public partial class TodoListPage : ContentPage
         });
     }
 
-    private void OnBoxChanged(object sender, EventArgs e) {
+    private async void OnBoxChanged(object sender, EventArgs e) {
+
+        await database.SaveItemAsync(Item);
         //if (e..FirstOrDefault() is not TodoItem item)
         //    return;
     }
