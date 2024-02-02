@@ -23,8 +23,7 @@
                         <Label Text="{Binding Title}"
                                VerticalTextAlignment="Center"/>
                         <CheckBox Grid.Column="1"
-                                  IsChecked="{Binding Done}"
-                                  CheckedChanged="OnBoxChanged" />
+                                  IsChecked="{Binding Done}" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
