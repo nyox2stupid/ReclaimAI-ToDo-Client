@@ -18,6 +18,11 @@ For more information about the sample see [Local Databases with SQlite documenta
       - ~~WORK~~
     - [x] ~~"deleted": bool,~~
     - [x] ~~"priority": string,~~
+    - [ ] duration
+    - [ ] min duration
+    - [ ] max duration
+    - [ ] utcdatetime Schedule after
+    - [ ] utcdatetime Due date (non editable)
 - MainPage
     - [x] ~~Zeigt alle ToDo Items an~~
     - [x] ~~Knopf zum Hinzufügen von Items~~
