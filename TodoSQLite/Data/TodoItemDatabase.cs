@@ -36,13 +36,13 @@ public class TodoItemDatabase
     public async Task<TodoItem> GetItemAsync(int id)
     {
         await Init();
-        return await Database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        return await Database.Table<TodoItem>().Where(i => i.TaskID == id).FirstOrDefaultAsync();
     }
 
     public async Task<int> SaveItemAsync(TodoItem item)
     {
         await Init();
-        if (item.ID != 0)
+        if (item.TaskID != 0)
         {
             return await Database.UpdateAsync(item);
         }

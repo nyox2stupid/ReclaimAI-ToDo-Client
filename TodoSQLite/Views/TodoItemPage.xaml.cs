@@ -31,7 +31,7 @@ public partial class TodoItemPage : ContentPage
     }
     async void OnDeleteClicked(object sender, EventArgs e)
     {
-        if (Item.ID == 0)
+        if (Item.TaskID == 0)
             return;
         await database.DeleteItemAsync(Item);
         await Shell.Current.GoToAsync("..");

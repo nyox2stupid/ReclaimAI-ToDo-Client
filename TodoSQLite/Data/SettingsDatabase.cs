@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Microsoft.VisualBasic;
+using SQLite;
 using TodoSQLite.Models;
 
 namespace TodoSQLite.Data;
@@ -11,6 +12,27 @@ public class SettingsDatabase
     {
     }
 
+    public static Settings getSettings() 
+    {
+
+        //ToDo:Klappt noch nicht muss ich mal ausprobieren.
+        SettingsDatabase settingsDatabase = new SettingsDatabase();
+        var test = settingsDatabase.GetSettingAsync();
+        Settings settings = new Settings();
+        Task.Run(async () =>
+        {
+            settings = await settingsDatabase.GetSettingAsync();
+
+        });
+   
+            
+        if (settings == null)
+        {
+            settings = new Settings();
+        }
+
+        return settings; 
+    }
     async Task Init()
     {
         if (Database is not null)
@@ -28,6 +50,7 @@ public class SettingsDatabase
     public async Task<int> SaveItemAsync(Settings item)
     {
         await Init();
+        
         if (item.ID != 0)
             return await Database.UpdateAsync(item);
         else

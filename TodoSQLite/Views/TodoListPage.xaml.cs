@@ -7,6 +7,7 @@ namespace TodoSQLite.Views;
 public partial class TodoListPage : ContentPage
 {
     TodoItemDatabase database;
+    ReclaimTaskClient taskClient;
 
     public ObservableCollection<TodoItem> Items { get; set; } = new();
     public TodoListPage(TodoItemDatabase todoItemDatabase)
@@ -20,7 +21,9 @@ public partial class TodoListPage : ContentPage
     protected override async void OnNavigatedTo(NavigatedToEventArgs args)
     {
         base.OnNavigatedTo(args);
+        taskClient = await ReclaimTaskClient.construct();
         var items = await database.GetItemsAsync();
+       
         MainThread.BeginInvokeOnMainThread(() =>
         {
             Items.Clear();
